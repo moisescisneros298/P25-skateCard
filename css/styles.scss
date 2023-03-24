@@ -56,6 +56,36 @@ body {
             .rigth {
                 opacity: 1;
             }
+            ~.img-container {
+                img {
+                    transform: scale(0.9) translateX(77%) translateY(100%) rotateZ(80deg);
+                }
+            }
         }
+    }
+    .img-container {
+        animation: float 4s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite alternate;
+        position: absolute;
+        top: 0;
+        right: 0;
+        pointer-events: none;
+        backface-visibility: hidden;
+        img {
+            transform-origin: top right;
+            transition: transform 300ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+            transition-delay: 100ms;
+            transform: translateX(42%) rotateZ(13deg) skewX(3deg);
+            pointer-events: none;
+            width: 100%;
+
+        }
+    }
+}
+@keyframes float {
+    0% {
+        transform: translateZ(20px);
+    }
+    100% {
+        transform: translateY(-21px) translateX(-13) translateZ(30px);
     }
 }
