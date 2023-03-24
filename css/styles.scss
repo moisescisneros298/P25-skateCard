@@ -29,7 +29,7 @@ body {
         transform-style: preserve-3d;
         cursor: pointer;
         transform: translateZ(-144px);
-        transition: all 350ms cubic-bezier(.52,1.44,.57,.29);
+        transition: transform 350ms cubic-bezier(0.39, 0.575, 0.565, 1);//error?
         .front {
             background-image: linear-gradient(180deg, rgb(17,17,17) 0%, rgba(92,91,94,0) 100%);
             transform: rotateY(0deg) translateZ(160px);
@@ -86,7 +86,7 @@ body {
             width: 320px;
             height: 450px;
             padding: 34px 21px;
-            transition: all 350ms cubic-bezier(.52,1.44,.57,.29);
+            transition: all 350ms cubic-bezier(0.39, 0.575, 0.565, 1);
         }
         &:hover {
             transform: translateZ(-160px) rotateY(-90deg);
@@ -104,7 +104,7 @@ body {
         }
     }
     .img-container {
-        animation: float 4s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite alternate;
+        animation: float 4s cubic-bezier(0.39, 0.575, 0.565, 1) infinite alternate;
         position: absolute;
         top: 0;
         right: 0;
@@ -116,8 +116,7 @@ body {
             transition-delay: 100ms;
             transform: translateX(42%) rotateZ(13deg) skewX(3deg);
             pointer-events: none;
-            width: 100%;
-
+            width: 150%;
         }
     }
 }
@@ -126,7 +125,7 @@ body {
         transform: translateZ(20px);
     }
     100% {
-        transform: translateY(-21px) translateX(-13) translateZ(30px);
+        transform: translateY(-21px) translateX(-13px) translateZ(30px);
     }
 }
 
