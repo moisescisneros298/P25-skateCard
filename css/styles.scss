@@ -47,6 +47,23 @@ body {
             transform: rotateY(90deg) translateZ(160px);
             opacity: 0.08;
             border-radius: 0 0 3px 34px;
+            ul {
+                margin-left: 21px;
+                padding: 0;
+                font-size: 16px;
+                font-weight: 300;
+                list-style: none;
+                li {
+                    padding-bottom: 8px;
+                    position: relative;
+                    &::before {
+                        content: "X";
+                        position: absolute;
+                        left: -21px;
+                        opacity: .55;
+                    }
+                }
+            }
             button {
                 position: absolute;
                 right: 21px;
@@ -61,6 +78,7 @@ body {
                 padding: 13px 34px;
                 border-radius: 55px 55px 21px 55px;
                 box-shadow: 8px 5px 13px rgba(34,34,34,.08);
+                cursor: pointer;
             }
         }
         &>div {
@@ -109,5 +127,11 @@ body {
     }
     100% {
         transform: translateY(-21px) translateX(-13) translateZ(30px);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        transform: scale(.67);
     }
 }
